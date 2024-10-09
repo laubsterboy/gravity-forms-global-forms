@@ -2,7 +2,7 @@
 /**
  * Plugin Name: 		Gravity Forms Global Forms
  * Description: 		Allows forms from the Gravity Forms plugin to be used across any site on a WordPress multisite installation via a new shortcode.
- * Version: 			1.0.0
+ * Version: 			1.0.1
  * Author:				John Russell
  * License: 			GPL-3.0-or-later
  * License URI:			https://www.gnu.org/licenses/gpl-3.0.html
@@ -113,23 +113,29 @@ class GFGlobalForms {
 
 
 
-	function shortcode_gravityform_global($atts, $content = null) {
+	/**
+ 	 * Handler for the gravityform_global shortcode
+   	 * 
+	 * @since 1.0.0
+	 * 
+	 * @return string
+	public function shortcode_gravityform_global($atts, $content = null) {
 		global $blog_id, $wpdb;
 	
 		$atts = shortcode_atts(array(
 			'title'					=> true,
-			'description'			=> true,
+			'description'				=> true,
 			'id'					=> 0,
 			'name'					=> '',
-			'field_values'			=> '',
+			'field_values'				=> '',
 			'ajax'					=> false,
 			'tabindex'				=> 0,
 			'action'				=> 'form',
 			'theme'					=> 'gravity-theme',
 			'styles'				=> '',
 			'form_url'				=> null,				// Added: This should be the only attribute needed for this to work (the domain and site_id can be derived from this)
-			'redirect_to_origin'	=> false,				// Added (optional): Whether to submit the form to the current page (false) OR submit the form to the original form_url (true)
-			'site_domain'			=> null,				// Added (optional): The domain of the site where the original form exists (only needed if 'form_url' isn't set)
+			'redirect_to_origin'			=> false,				// Added (optional): Whether to submit the form to the current page (false) OR submit the form to the original form_url (true)
+			'site_domain'				=> null,				// Added (optional): The domain of the site where the original form exists (only needed if 'form_url' isn't set)
 			'site_id'				=> null,				// Added (optional): The site/blog ID of the site where the original form exists (only needed if 'form_url' and 'site_domain' aren't set)
 		), $atts, 'gravityform_global');
 	
