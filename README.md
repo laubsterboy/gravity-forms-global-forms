@@ -6,6 +6,8 @@ Allows forms from the Gravity Forms plugin to be used across any site on a WordP
 * Gravity Forms plugin must be installed and activated (on all sites where a global form will be used)
 
 ## Installation
+Always backup your website prior to installing a new plugin.
+
 ### Easy
 1. Download the [Source code (zip)](https://github.com/laubsterboy/gravity-forms-global-forms/releases/latest/).
 2. Log in to WordPress and go to Network Admin > Plugins > Add New Plugin > Upload Plugin > select the zip that was downloaded.
