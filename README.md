@@ -37,3 +37,4 @@ Create a form on a site within your WordPress multisite instance and then use th
 `[gravityform_global id="25" form_url="https://www.example.com/contact/" title="false" /]`
 * **id** is the Gravity Forms form ID (25 in this example) that can be found when editing the form.
 * **form_url** is the page on the example.com website where the form has already been embedded.
+* This shortcode could be placed on a subdomain site or sub-directory site within your WordPress multisite instance, such as https://subdomain.example.com/contact/ so one contact form can be shared across multiple sites.
